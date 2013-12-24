@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Gobang!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="connecting" class="well container" style="margin-top: 30px;">
+        <h1>无节操の五子棋 <small>真的木有节操哦</small></h1>
+
+        <div id="connecting-bar" class="progress progress-striped active">
+            <div class="progress-bar-warning progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span>连接服务器中...</span>
+            </div>
+        </div>
+
+        <div style="text-align: right;">
+            <small>By XadillaX</small>
+        </div>
+    </div>
+
+    <div id="connected" class="well container" style="margin-top: 30px; display: none;">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div>
+                    目前大厅中共有 <span id="hallCount"></span> 人。
+                </div>
+                <div class="btn-group btn-group-justified">
+                    <a id="searching-rival" type="button" data-loading-text="正在寻找..." class="btn btn-warning"><i class="glyphicon glyphicon-heart"></i> 寻找对手</a>
+                    <a id="cancel-searching-rival" type="button" disabled="disabled" class="btn btn-info"><i class="glyphicon glyphicon-remove"></i> 取消</a>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <div id="waiting-xhb" class="well container" style="margin-top: 30px; display: none;">
+        <h1>开房第 <span id="roomId"></span> 号 <small>也就是说可以玩了呢</small></h1>
+
+        <div id="waiting-xhb-bar" class="progress progress-striped active">
+            <div class="progress-bar-warning progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span>等待小伙伴进来没羞没臊中...</span>
+            </div>
+        </div>
+
+        <div class="row" id="gobang-board" style="display: none;">
+            <div class="col-md-9">
+
+            </div>
+            <div class="col-md-3">
+                <div class="panel">
+                    <div class="panel-heading">操作们呢</div>
+                    <div class="panel-body">
+                        <div class="btn-group btn-group-justified">
+                            <a id="ready-to-game" type="button" class="btn btn-warning"><i class="glyphicon glyphicon-heart"></i> 准备</a>
+                            <a id="exit-room" type="button" class="btn btn-info"><i class="glyphicon glyphicon-remove"></i> 退出房间</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: right;">
+            <small>By XadillaX</small>
+        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="js/lib/socket.io.js"></script>
+    <script src="js/lib/pomeloclient.js"></script>
+    <script src="js/gobang.js"></script>
+</body>
+</html>
